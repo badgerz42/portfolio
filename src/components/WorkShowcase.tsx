@@ -20,6 +20,8 @@ const slugOf = (project: PortfolioProject) => project.slug ?? '';
 const tilePattern = ['lead', 'tall', 'std', 'std', 'wide', 'std', 'std'] as const;
 const tilePatternOfEight = ['lead', 'tall', 'std', 'std', 'std', 'std', 'lead', 'wide'] as const;
 const tileAt = (index: number, count: number) => {
+  // Two tiles left over after a full pattern: two leads fill the last rows side by side.
+  if (count % tilePattern.length === 2 && index >= count - 2) return 'lead';
   const pattern = count % tilePattern.length === 1 && index >= count - tilePatternOfEight.length ? tilePatternOfEight : tilePattern;
   const offset = pattern === tilePatternOfEight ? count - tilePatternOfEight.length : 0;
   return pattern[(index - offset) % pattern.length];

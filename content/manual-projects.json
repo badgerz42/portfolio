@@ -747,6 +747,92 @@
     ]
   },
   {
+    "slug": "tavi-medical-animation",
+    "title": "TAVI Medical Animation",
+    "year": "2022",
+    "role": "MEDICAL ANIMATION / MODELLING, RIGGING, ANIMATION, LOOK DEVELOPMENT, COMPOSITING",
+    "tools": [
+      "Blender",
+      "Eevee",
+      "Character Creator",
+      "Cloth + smoke simulation",
+      "Photoshop",
+      "After Effects"
+    ],
+    "tags": [
+      "Medical",
+      "Animation",
+      "Blender",
+      "Patient Education"
+    ],
+    "description": "An 80-second patient-education film of a transcatheter aortic valve implantation, made solo at Medify: one Blender scene and one camera from the standing patient to the new valve working inside a cutaway heart.",
+    "cover": "assets/projects/tavi-medical-animation/cover.jpg",
+    "layout": "article",
+    "contents": [
+      {
+        "label": "PATIENT",
+        "target": "the-patient"
+      },
+      {
+        "label": "HEART",
+        "target": "the-heart"
+      },
+      {
+        "label": "VALVE",
+        "target": "the-valve"
+      },
+      {
+        "label": "LAYERS",
+        "target": "built-in-layers"
+      },
+      {
+        "label": "FRAMES",
+        "target": "frames-from-the-film"
+      }
+    ],
+    "videos": [
+      {
+        "title": "TAVI, the full film (80 seconds, silent)",
+        "url": "assets/projects/tavi-medical-animation/tavi-final.mp4",
+        "platform": "local",
+        "poster": "assets/projects/tavi-medical-animation/tavi-final.poster.jpg"
+      }
+    ],
+    "body": [
+      "## The Brief",
+      "TAVI, transcatheter aortic valve implantation, replaces a failing aortic valve without opening the chest. A new valve is crimped onto a balloon, threaded up from the groin through the femoral artery and the aorta, and expanded inside the old valve. This film explains that procedure to the patient who is about to have it, in 80 seconds.",
+      "I made it at Medify in 2022 and did all of it myself: the patient, the theatre, the heart, the device, the animation, the look, the render layers and the final comp. It is one of a long series of animated procedures I built there, and the heart from this film went on to carry more than fifteen other cardiac procedures.",
+      "![The diseased aortic valve from above, early in the film](assets/projects/tavi-medical-animation/still-diseased-valve.webp)",
+      "## One Scene, One Camera",
+      "The whole film is a single Blender scene with a single animated camera: 2,000 frames at 25 fps, rendered in Eevee at 1920 by 1440. There are no cuts between files. The camera starts on the standing patient, dives through the chest to the valve, pulls back out to the operating table, follows the catheter up the aorta and ends inside the cutaway heart. Every dissolve in the film is a blend between render layers of the same frame.",
+      "For this page I went back into that scene four years later. Everything below that is not the film itself was rendered fresh from the original file in Blender 3.3, the version the film was rendered with.",
+      "## The Patient",
+      "The patient is a Character Creator figure on a 101-bone rig. His job is to make the viewer feel that this is about a person before the camera goes inside. The gown builds onto him beside the table, he sits, swings his legs up and lies back, and a drape covers his legs. The gown and the drape are cloth simulations that follow the body through that whole move.",
+      "::video[Patient and theatre: clay render from the film camera beside the finished film](assets/projects/tavi-medical-animation/patient-clay-vs-final.mp4)",
+      "![On the table, before the camera goes in](assets/projects/tavi-medical-animation/still-patient-table.webp)",
+      "## The Heart",
+      "The heart exists twice in the scene. One version is whole, with coronary arteries and veins on its surface. The other is cut open along the long axis to show the chambers, the chordae and the valves. Both follow the patient's body and the same heartbeat, so they can be dissolved into each other at any frame. The valves are separate meshes with their own beat cycle, so the aortic valve can be shown on its own, opening and closing, with nothing in front of it.",
+      "Turn the assets around below: the whole heart, the cutaway, the replacement valve on its balloon and the valve after it has been expanded. The clay versions show the modelling without the painted textures.",
+      "::embed[turntables]",
+      "## The Valve",
+      "The replacement valve is a stent frame with a fabric skirt and three leaflets. It has three shapes blended over time: crimped on the balloon, expanded by it, and working on its own, opening and closing with the heartbeat. The balloon and the valve both follow a curve that runs from the groin to the aortic root, so the whole delivery is animated by sliding them along one path. The guide wire and the catheters are drawn along the same family of curves.",
+      "The film watches the deployment from a distance, through the heart wall. This is the same animation from a new camera, close on the valve, with only the valve layer switched on.",
+      "::video[A new close-up of the deployment: balloon in, valve expanded, old leaflets pushed aside, new leaflets working](assets/projects/tavi-medical-animation/valve-close-up.mp4)",
+      "## Deployment",
+      "Here is the centre of the film as geometry and as the finished picture. On the left, the cutaway heart is ghosted so the valve, the balloon and the wires stay readable. On the right is the same stretch of the film.",
+      "::video[Deployment: clay render of the heart and device layers beside the finished film](assets/projects/tavi-medical-animation/deployment-clay-vs-final.mp4)",
+      "## Built In Layers",
+      "The scene renders as six layers through the same camera: the whole heart with its vessels, the cutaway heart, the valves and device, the instruments, the contrast dye and the patient. Each one carries ambient occlusion, a gloss pass and object mattes. The final picture was assembled from those layers in After Effects: the ghosted outer heart over the cutaway, the glow around the aortic root and the grade all happen there.",
+      "Drag through one frame of the deployment: the whole heart, the cutaway, the device placed inside it and the finished frame from the film.",
+      "::embed[breakdown]",
+      "The contrast dye at the aortic root is a small smoke simulation, emitted at the tip of its own catheter and rendered as a separate layer so its strength could be set in the comp.",
+      "## Frames From The Film",
+      "![The cutaway reveal as the catheter arrives](assets/projects/tavi-medical-animation/still-cutaway-reveal.webp)",
+      "![The new valve in place inside the old one](assets/projects/tavi-medical-animation/still-valve-deployed.webp)",
+      "![The new valve from above, opening with the heartbeat](assets/projects/tavi-medical-animation/still-new-valve.webp)"
+    ]
+  },
+  {
     "slug": "philips-sensotouch",
     "title": "Philips Sensotouch",
     "role": "RIGGING / ANIMATION / CAMERA / RENDERING",

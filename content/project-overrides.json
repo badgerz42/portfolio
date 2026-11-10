@@ -323,5 +323,87 @@
       "3d"
     ],
     "date": "2018-06-03"
+  },
+  "tavi-medical-animation": {
+    "kind": [
+      "3d",
+      "vfx"
+    ],
+    "feature": 5,
+    "date": "2022-03-14",
+    "breakdownRatio": 1.3333,
+    "breakdown": [
+      {
+        "shot": "Deployment",
+        "before": {
+          "label": "Whole heart",
+          "src": "assets/projects/tavi-medical-animation/bd-whole-heart.webp"
+        },
+        "after": {
+          "label": "Cutaway",
+          "src": "assets/projects/tavi-medical-animation/bd-cutaway.webp"
+        }
+      },
+      {
+        "shot": "Deployment",
+        "before": {
+          "label": "Cutaway",
+          "src": "assets/projects/tavi-medical-animation/bd-cutaway.webp"
+        },
+        "after": {
+          "label": "+ Valve and device",
+          "src": "assets/projects/tavi-medical-animation/bd-device.webp"
+        }
+      },
+      {
+        "shot": "Deployment",
+        "before": {
+          "label": "+ Valve and device",
+          "src": "assets/projects/tavi-medical-animation/bd-device.webp"
+        },
+        "after": {
+          "label": "Final comp",
+          "src": "assets/projects/tavi-medical-animation/bd-final.webp"
+        }
+      }
+    ],
+    "turntables": [
+      {
+        "label": "Heart",
+        "dir": "assets/projects/tavi-medical-animation/turntables/heart",
+        "frames": 36,
+        "note": "The whole heart with coronary arteries and veins"
+      },
+      {
+        "label": "Cutaway",
+        "dir": "assets/projects/tavi-medical-animation/turntables/cutaway",
+        "frames": 36,
+        "note": "The cutaway heart: chambers, chordae and valves"
+      },
+      {
+        "label": "Cutaway clay",
+        "dir": "assets/projects/tavi-medical-animation/turntables/cutaway-clay",
+        "frames": 36,
+        "note": "The cutaway heart without textures"
+      },
+      {
+        "label": "Valve on balloon",
+        "dir": "assets/projects/tavi-medical-animation/turntables/balloon",
+        "frames": 36,
+        "note": "The replacement valve on its balloon, mid-inflation"
+      },
+      {
+        "label": "Valve",
+        "dir": "assets/projects/tavi-medical-animation/turntables/valve",
+        "frames": 36,
+        "note": "The expanded valve: stent frame, skirt and leaflets"
+      },
+      {
+        "label": "Valve clay",
+        "dir": "assets/projects/tavi-medical-animation/turntables/valve-clay",
+        "frames": 36,
+        "note": "The expanded valve without materials"
+      }
+    ]
   }
 }
