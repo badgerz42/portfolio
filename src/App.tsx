@@ -304,8 +304,8 @@ function HomePage() {
             <p className="hero-status"><i aria-hidden="true" /> {availability}</p>
           </div>
           <p className="hero-summary">
-            I make cinematic images with 3D, simulation and generative video, from product CGI and
-            digital humans to LTX-2 film sequences and point-cloud music videos.
+            I make cinematic images with 3D, simulation and generative video: creature animation and fur,
+            product CGI and digital humans, LTX film sequences and point-cloud music videos.
           </p>
           {/* Buttons and social icons share one row so they always line up. */}
           <div className="hero-identity__actions">
@@ -327,12 +327,12 @@ function HomePage() {
       <section id="process" className="process-section" aria-labelledby="process-title">
         <SectionHeader eyebrow="PROCESS" titleId="process-title" title="Pipeline, not prompts">
           <p>
-            AI shots are steered by structure: pose, depth and restyle passes lock performance, framing and
-            timing to the edit. Drag through the passes from{' '}
+            AI shots are steered by structure: a 3D render, a pose or a depth pass locks performance, framing
+            and timing before a model touches the look. Drag through the passes from{' '}
             {breakdownProject ? <a href={projectHref(breakdownProject.slug ?? '')}>{breakdownProject.title}</a> : 'a recent shot'}.
           </p>
         </SectionHeader>
-        {breakdownProject?.breakdown ? <BreakdownSlider pairs={breakdownProject.breakdown} title={breakdownProject.title} /> : null}
+        {breakdownProject?.breakdown ? <BreakdownSlider pairs={breakdownProject.breakdown} title={breakdownProject.title} ratio={breakdownProject.breakdownRatio} /> : null}
         <ol className="process-steps">
           {processSteps.map((step, index) => (
             <li key={step.title} data-reveal>
@@ -393,7 +393,7 @@ export function App() {
   const projectIndex = project ? projects.findIndex((candidate) => candidate.slug === project.slug) : -1;
   const previousProject = projectIndex >= 0 ? projects[(projectIndex - 1 + projects.length) % projects.length] : undefined;
   const nextProject = projectIndex >= 0 ? projects[(projectIndex + 1) % projects.length] : undefined;
-  const defaultImage = 'assets/projects/fugi-visualizer/reference-tongue-in.png';
+  const defaultImage = 'assets/share/vladmaftei-share.jpg';
   const metadata: RouteMetadata = project
     ? {
       title: `${project.title} — Vlad Maftei`,

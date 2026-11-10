@@ -33,6 +33,7 @@ F1R = 'assets/projects/f1r-live-video/f1r-live-final.mp4'
 FOREST = 'assets/projects/dark-forest/dark-forest-final.mp4'
 INK = 'assets/projects/dark-forest/look-dev-ink-edit.mp4'
 FUGI = 'assets/projects/fugi-visualizer'
+BEAR = 'assets/projects/polar-bear-walk/polar-bear-final.mp4'
 
 
 # ---------------------------------------------------------------- sources
@@ -304,7 +305,10 @@ FOREST_FOCUS = {'x': 0.35, 'y': 0.6, 'zoom': 1.5}
 DAFT = 'assets/artstation/daft-punk-cover-art/01-vlx-maftei-finalupscaled.jpg'
 CAT = 'assets/artstation/cat-walkman/01-vlx-maftei-catwalkmanhighrezblurred2.jpg'
 EDIT = [
-    card('f1r-live-video', ('clip', F1R, 150.0), 2, [(2, 'circle')]),
+    # Newest project opens: the walk, then head and paws side by side.
+    card('polar-bear-walk', ('clip', BEAR, 2.0), 3, [(1.5, 'color'), (1.5, 'split:cols2')], arrivals=(0, 5),
+         split=[('clip', BEAR, 3.5, {'x': 0.42, 'y': 0.38, 'zoom': 2.0}), ('clip', BEAR, 3.5, {'x': 0.6, 'y': 0.72, 'zoom': 2.0})]),  # head / paws
+    card('f1r-live-video', ('clip', F1R, 150.0), 2, [(2, 'circle')], enter='whip'),
     card('dark-forest', ('clip', FOREST, 10.0, FOREST_FOCUS), 2, [(1, 'bw'), (1, 'color')], enter='zoom'),
     card('dark-forest', ('clip', FOREST, 12.0, FOREST_FOCUS), 1.5, [(1.5, 'split:stack2')], arrivals=(0, 4),
          split=[('clip', FOREST, 12.0, FOREST_FOCUS), ('clip', FOREST, 4.0, {'x': 0.78, 'y': 0.2, 'zoom': 1.6})]),  # boy / eyes
@@ -336,7 +340,7 @@ EDIT = [
 ]
 
 TITLES = {}
-TOOLS = {'dark-forest': ['Hunyuan3D', 'Kimodo', 'Blender'], 'f1r-live-video': ['LTX-2.3', 'Pi3X point cloud'], 'fugi-visualizer': ['Codex', 'WebGL'], 'trips': ['Flux', 'Runway']}
+TOOLS = {'polar-bear-walk': ['MiniMax H3', 'Blender', 'LTX-2.5'], 'dark-forest': ['Hunyuan3D', 'Kimodo', 'Blender'], 'f1r-live-video': ['LTX-2.3', 'Pi3X point cloud'], 'fugi-visualizer': ['Codex', 'WebGL'], 'trips': ['Flux', 'Runway']}
 
 
 def load_titles():

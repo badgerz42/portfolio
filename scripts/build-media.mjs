@@ -26,6 +26,7 @@ const XP = 'assets/artstation/xparticles-challenge-2018-animation-tests-and-expl
 const FUGI = 'assets/projects/fugi-visualizer';
 const F1R_LIVE = 'assets/projects/f1r-live-video/f1r-live-final.mp4';
 const DARK_FOREST = 'assets/projects/dark-forest/dark-forest-final.mp4';
+const POLAR_BEAR = 'assets/projects/polar-bear-walk/polar-bear-final.mp4';
 const DARK_FOREST_INK = 'assets/projects/dark-forest/look-dev-ink-edit.mp4';
 
 function run(cmd, args) {
@@ -121,7 +122,7 @@ const gallerySlides = (project, count = 4) => {
 };
 
 const customLoops = {
-  'polar-bear-walk': [{ clip: 'assets/projects/polar-bear-walk/polar-bear-final.mp4', start: 2, duration: 4.5 }],
+  'polar-bear-walk': [{ clip: POLAR_BEAR, start: 2, duration: 4.5 }],
   'f1r-live-video': [{ clip: F1R_LIVE, start: 158, duration: 4.5 }],
   'dark-forest': [{ clip: DARK_FOREST, start: 9, duration: 4.5 }],
   'night-of-the-living-dead-ltx-contest': [{ clip: NOTLD, start: 64.2, duration: 4 }],
@@ -140,6 +141,7 @@ const coverOf = (slug) => projects.find((project) => project.slug === slug)?.cov
 // `slug` ties each shot to its project so the site can caption what's on screen (reel.json).
 const reel = [
   // Only recent work: 2025-2026, plus Trips (2024).
+  { slug: 'polar-bear-walk', tools: ['MiniMax H3', 'Blender', 'LTX-2.5'], clip: POLAR_BEAR, start: 3, duration: 2 },
   { slug: 'f1r-live-video', tools: ['LTX-2.3', 'Pi3X point cloud'], clip: F1R_LIVE, start: 149, duration: 1.8 },
   { slug: 'night-of-the-living-dead-ltx-contest', clip: NOTLD, start: 30.4, duration: 1.8 },
   // Reframed so the boy and his lantern sit in the middle of the hero's open area, clear of the title.

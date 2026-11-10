@@ -11,12 +11,18 @@ export const socialLinks = [
 
 export const profileFacts = [
   {
-    label: 'Studios / clients',
-    items: ['INDG — Philips product renders and presentation video']
+    label: 'Recent work',
+    items: [
+      'Polar Bear Walk — AI-video motion capture, fur, LTX-2.5 — 2026',
+      'Dark Forest — animated Blender shot — 2026',
+      'F1R - Fugi Live — point-cloud music video — 2026',
+      'Night of the Living Dead — LTX-2 contest sequence — 2026'
+    ]
   },
   {
-    label: 'Contests',
+    label: 'Studios / contests',
     items: [
+      'INDG — Philips product renders and presentation video',
       'LTX-2 generative video contest — 2026',
       'CC Digital Human Contest — 2020',
       'X-Particles Challenge — 2018',
@@ -25,10 +31,10 @@ export const profileFacts = [
   },
   {
     label: '3D / VFX',
-    items: ['Houdini', 'Cinema 4D', 'X-Particles', 'Blender + Geometry Nodes', 'Hunyuan3D', 'Kimodo', 'Marvelous Designer', 'Substance Painter', 'Character Creator', 'Unreal Engine']
+    items: ['Houdini', 'Cinema 4D', 'X-Particles', 'Blender + Geometry Nodes', 'Cycles + hair curves', 'Tripo', 'Hunyuan3D', 'Kimodo', 'Marvelous Designer', 'Substance Painter', 'Character Creator', 'Unreal Engine']
   },
   {
     label: 'AI / code',
-    items: ['ComfyUI', 'LTX-2 / LTX-2.3', 'Pi3X / Vista4D', 'SAM3', 'MediaPipe', 'SDXL + ControlNet', 'Flux', 'Qwen Image Edit', 'Suno', 'Codex', 'PyTorch + CUDA', 'WebGL / Canvas']
+    items: ['ComfyUI', 'LTX-2 / LTX-2.3 / LTX-2.5', 'MiniMax H3', 'Pi3X / Vista4D', 'SAM3', 'MediaPipe', 'SDXL + ControlNet', 'Flux', 'Qwen Image Edit', 'Suno', 'Claude Code', 'Codex', 'PyTorch + CUDA', 'WebGL / Canvas']
   }
 ];

@@ -1,9 +1,20 @@
 {
-  "duration": 24.533,
+  "duration": 26.533,
   "shots": [
     {
       "start": 0,
-      "end": 1.833,
+      "end": 2,
+      "slug": "polar-bear-walk",
+      "title": "Polar Bear Walk",
+      "tools": [
+        "MiniMax H3",
+        "Blender",
+        "LTX-2.5"
+      ]
+    },
+    {
+      "start": 2,
+      "end": 3.833,
       "slug": "f1r-live-video",
       "title": "F1R - Fugi Live",
       "tools": [
@@ -12,8 +23,8 @@
       ]
     },
     {
-      "start": 1.833,
-      "end": 3.667,
+      "start": 3.833,
+      "end": 5.667,
       "slug": "night-of-the-living-dead-ltx-contest",
       "title": "Night of the Living Dead - LTX-2 Contest",
       "tools": [
@@ -22,8 +33,8 @@
       ]
     },
     {
-      "start": 3.667,
-      "end": 5.5,
+      "start": 5.667,
+      "end": 7.5,
       "slug": "dark-forest",
       "title": "Dark Forest",
       "tools": [
@@ -33,8 +44,8 @@
       ]
     },
     {
-      "start": 5.5,
-      "end": 6.9,
+      "start": 7.5,
+      "end": 8.9,
       "slug": "daft-punk-cover-art",
       "title": "Daft Punk cover art",
       "tools": [
@@ -43,8 +54,8 @@
       ]
     },
     {
-      "start": 6.9,
-      "end": 8.733,
+      "start": 8.9,
+      "end": 10.733,
       "slug": "night-of-the-living-dead-ltx-contest",
       "title": "Night of the Living Dead - LTX-2 Contest",
       "tools": [
@@ -53,8 +64,8 @@
       ]
     },
     {
-      "start": 8.733,
-      "end": 10.567,
+      "start": 10.733,
+      "end": 12.567,
       "slug": "f1r-live-video",
       "title": "F1R - Fugi Live",
       "tools": [
@@ -63,8 +74,8 @@
       ]
     },
     {
-      "start": 10.567,
-      "end": 12.067,
+      "start": 12.567,
+      "end": 14.067,
       "slug": "dark-forest",
       "title": "Dark Forest",
       "tools": [
@@ -73,8 +84,8 @@
       ]
     },
     {
-      "start": 12.067,
-      "end": 13.467,
+      "start": 14.067,
+      "end": 15.467,
       "slug": "cat-walkman",
       "title": "Cat Walkman",
       "tools": [
@@ -83,8 +94,8 @@
       ]
     },
     {
-      "start": 13.467,
-      "end": 14.967,
+      "start": 15.467,
+      "end": 16.967,
       "slug": "trips",
       "title": "Trips",
       "tools": [
@@ -93,8 +104,8 @@
       ]
     },
     {
-      "start": 14.967,
-      "end": 16.6,
+      "start": 16.967,
+      "end": 18.6,
       "slug": "night-of-the-living-dead-ltx-contest",
       "title": "Night of the Living Dead - LTX-2 Contest",
       "tools": [
@@ -103,8 +114,8 @@
       ]
     },
     {
-      "start": 16.6,
-      "end": 18,
+      "start": 18.6,
+      "end": 20,
       "slug": "fugi-visualizer",
       "title": "F1R - Fugi Visualizer",
       "tools": [
@@ -113,8 +124,8 @@
       ]
     },
     {
-      "start": 18,
-      "end": 19.633,
+      "start": 20,
+      "end": 21.633,
       "slug": "f1r-live-video",
       "title": "F1R - Fugi Live",
       "tools": [
@@ -123,8 +134,8 @@
       ]
     },
     {
-      "start": 19.633,
-      "end": 21.633,
+      "start": 21.633,
+      "end": 23.633,
       "slug": "night-of-the-living-dead-ltx-contest",
       "title": "Night of the Living Dead - LTX-2 Contest",
       "tools": [
@@ -133,8 +144,8 @@
       ]
     },
     {
-      "start": 21.633,
-      "end": 23.133,
+      "start": 23.633,
+      "end": 25.133,
       "slug": "trips",
       "title": "Trips",
       "tools": [
@@ -143,8 +154,8 @@
       ]
     },
     {
-      "start": 23.133,
-      "end": 24.533,
+      "start": 25.133,
+      "end": 26.533,
       "slug": "fugi-visualizer",
       "title": "F1R - Fugi Visualizer",
       "tools": [

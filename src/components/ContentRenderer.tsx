@@ -78,7 +78,7 @@ function ContentVideo({ title, url }: { title: string; url: string }) {
       {isLocal && !isLoaded ? (
         <button className="project-video__poster content-video__poster" type="button" onClick={() => setIsLoaded(true)} aria-label={`Play ${title}`} style={wideRatio ? { aspectRatio: String(wideRatio) } : undefined}>
           <img src={assetPath(poster!)} alt="" loading="lazy" onLoad={fitWide} />
-          <span>PLAY WIP</span>
+          <span>PLAY</span>
         </button>
       ) : isLocal ? (
         <video src={assetPath(url)} poster={assetPath(poster!)} controls autoPlay preload="metadata" />
