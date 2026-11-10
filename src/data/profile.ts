@@ -20,9 +20,12 @@ export const profileFacts = [
     ]
   },
   {
-    label: 'Studios / contests',
+    label: 'Experience / contests',
     items: [
-      'INDG — Philips product renders and presentation video',
+      '3D Generalist — StaticVFX Studio — 2023 to present',
+      '3D Generalist — Medify — animated medical procedures — 2014 to 2022',
+      '3D Artist — Framebreed — 2013 to 2014',
+      '3D Artist — INDG — 2008 to 2012',
       'LTX-2 generative video contest — 2026',
       'CC Digital Human Contest — 2020',
       'X-Particles Challenge — 2018',
