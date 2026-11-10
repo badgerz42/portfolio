@@ -121,6 +121,7 @@ const gallerySlides = (project, count = 4) => {
 };
 
 const customLoops = {
+  'polar-bear-walk': [{ clip: 'assets/projects/polar-bear-walk/polar-bear-final.mp4', start: 2, duration: 4.5 }],
   'f1r-live-video': [{ clip: F1R_LIVE, start: 158, duration: 4.5 }],
   'dark-forest': [{ clip: DARK_FOREST, start: 9, duration: 4.5 }],
   'night-of-the-living-dead-ltx-contest': [{ clip: NOTLD, start: 64.2, duration: 4 }],

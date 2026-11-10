@@ -14,10 +14,11 @@ test('work section leads with a featured grid, an archive list, and discipline f
 
   const tiles = page.locator('.work-bento .work-tile');
   const rows = page.locator('.archive__list li');
-  await expect(tiles).toHaveCount(7);
+  await expect(tiles).toHaveCount(8);
   await expect(rows).toHaveCount(8);
   // Newest first, and the lead shape always goes to the first tile.
   await expect(tiles.locator('h3')).toHaveText([
+    'Polar Bear Walk',
     'Dark Forest',
     'F1R - Fugi Live',
     'Night of the Living Dead - LTX-2 Contest',
@@ -30,7 +31,7 @@ test('work section leads with a featured grid, an archive list, and discipline f
 
   await page.getByRole('button', { name: '--product', exact: true }).click();
   await expect(page.getByRole('button', { name: '--product', exact: true })).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('.work-tile.is-dimmed')).toHaveCount(7);
+  await expect(page.locator('.work-tile.is-dimmed')).toHaveCount(8);
   await expect(page.locator('.archive__list li:not([hidden])')).toHaveCount(2);
 
   await page.getByRole('button', { name: '--all', exact: true }).click();
@@ -178,7 +179,7 @@ test('project dossiers expose sticky contents and deliberate previous-next exits
     await expect(contents.getByRole('link')).toHaveCount(4);
   }
 
-  await expect(page.locator('.project-exit-nav__previous')).toHaveAttribute('href', '/projects/quixel-mixer-contest/');
+  await expect(page.locator('.project-exit-nav__previous')).toHaveAttribute('href', '/projects/polar-bear-walk/');
   await expect(page.locator('.project-exit-nav__archive')).toHaveAttribute('href', '/#work');
   await expect(page.locator('.project-exit-nav__next')).toHaveAttribute('href', '/projects/night-of-the-living-dead-ltx-contest/');
 });
@@ -280,7 +281,7 @@ test('featured tiles reveal full colour, copy, and motion on hover', async ({ pa
   await tile.hover();
   await expect(tile.locator('.work-tile__media img')).toHaveCSS('filter', 'none');
   await expect(tile.locator('.work-tile__info p')).toHaveCSS('opacity', '1');
-  await expect(tile.locator('video.work-loop')).toHaveAttribute('src', /\/assets\/generated\/loops\/dark-forest\.mp4$/);
+  await expect(tile.locator('video.work-loop')).toHaveAttribute('src', /\/assets\/generated\/loops\/polar-bear-walk\.mp4$/);
 });
 
 test('videos precede gallery images and the text toggle reports its state', async ({ page }) => {
@@ -352,6 +353,21 @@ test('Dark Forest page has draggable turntables and an inline pass breakdown', a
   const breakdown = page.locator('.content-renderer .breakdown');
   await expect(breakdown).toHaveCount(1);
   await expect(breakdown.locator('.breakdown__stages button')).toHaveCount(5);
+});
+
+test('the polar bear page shows its final shot, inline media and the CG-to-footage slider', async ({ page, request }) => {
+  await page.goto('/projects/polar-bear-walk/');
+  await expect(page.locator('h1')).toContainText('Polar Bear Walk');
+
+  const breakdown = page.locator('.content-renderer .breakdown');
+  await breakdown.scrollIntoViewIfNeeded();
+  await expect(breakdown).toBeVisible();
+  await expect(breakdown.locator('.breakdown__stages button')).toHaveCount(3);
+  await expect(page.locator('.content-renderer .content-video')).toHaveCount(10);
+
+  const sources = await page.locator('.content-renderer img').evaluateAll((images) => images.map((image) => image.getAttribute('src') ?? ''));
+  expect(sources.length).toBeGreaterThan(15);
+  for (const source of sources) expect((await request.get(source)).ok(), source).toBe(true);
 });
 
 test('the hero reel only features recent work (2025-2026 plus Trips)', async ({ request }) => {

@@ -1,4 +1,49 @@
 {
+  "polar-bear-walk": {
+    "kind": [
+      "3d",
+      "ai",
+      "vfx"
+    ],
+    "feature": 0,
+    "date": "2026-10-09",
+    "breakdownRatio": 1.6954,
+    "breakdown": [
+      {
+        "shot": "Frame one",
+        "before": {
+          "label": "Cycles render",
+          "src": "assets/projects/polar-bear-walk/frame1-cg.webp"
+        },
+        "after": {
+          "label": "ChatGPT first frame",
+          "src": "assets/projects/polar-bear-walk/frame1-photoreal.webp"
+        }
+      },
+      {
+        "shot": "Frame one",
+        "before": {
+          "label": "ChatGPT first frame",
+          "src": "assets/projects/polar-bear-walk/frame1-photoreal.webp"
+        },
+        "after": {
+          "label": "LTX-2.5 frame",
+          "src": "assets/projects/polar-bear-walk/frame1-ltx.webp"
+        }
+      },
+      {
+        "shot": "Mid walk",
+        "before": {
+          "label": "Cycles render",
+          "src": "assets/projects/polar-bear-walk/mid-cg.webp"
+        },
+        "after": {
+          "label": "LTX-2.5 frame",
+          "src": "assets/projects/polar-bear-walk/mid-ltx.webp"
+        }
+      }
+    ]
+  },
   "f1r-live-video": {
     "kind": [
       "ai",
