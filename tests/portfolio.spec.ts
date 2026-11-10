@@ -355,6 +355,14 @@ test('Dark Forest page has draggable turntables and an inline pass breakdown', a
   await expect(breakdown.locator('.breakdown__stages button')).toHaveCount(5);
 });
 
+test('the homepage process slider keeps the frame shape of the project it shows', async ({ page }) => {
+  await page.goto('/#process');
+  const frame = page.locator('#process .breakdown__frame');
+  await frame.scrollIntoViewIfNeeded();
+  const box = await frame.boundingBox();
+  expect(box!.width / box!.height).toBeCloseTo(1.6954, 1);
+});
+
 test('the polar bear page shows its final shot, inline media and the CG-to-footage slider', async ({ page, request }) => {
   await page.goto('/projects/polar-bear-walk/');
   await expect(page.locator('h1')).toContainText('Polar Bear Walk');

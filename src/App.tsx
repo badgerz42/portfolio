@@ -332,7 +332,7 @@ function HomePage() {
             {breakdownProject ? <a href={projectHref(breakdownProject.slug ?? '')}>{breakdownProject.title}</a> : 'a recent shot'}.
           </p>
         </SectionHeader>
-        {breakdownProject?.breakdown ? <BreakdownSlider pairs={breakdownProject.breakdown} title={breakdownProject.title} /> : null}
+        {breakdownProject?.breakdown ? <BreakdownSlider pairs={breakdownProject.breakdown} title={breakdownProject.title} ratio={breakdownProject.breakdownRatio} /> : null}
         <ol className="process-steps">
           {processSteps.map((step, index) => (
             <li key={step.title} data-reveal>
