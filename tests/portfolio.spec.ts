@@ -373,7 +373,7 @@ test('the polar bear page shows its final shot, inline media and the CG-to-foota
 test('the hero reel only features recent work (2025-2026 plus Trips)', async ({ request }) => {
   for (const file of ['reel.json', 'reel-collage.json', 'reel-doodle.json']) {
     const manifest = await (await request.get(`/assets/generated/reel/${file}`)).json();
-  const recent = ['f1r-live-video', 'dark-forest', 'night-of-the-living-dead-ltx-contest', 'fugi-visualizer', 'cat-walkman', 'daft-punk-cover-art', 'trips'];
+  const recent = ['polar-bear-walk', 'f1r-live-video', 'dark-forest', 'night-of-the-living-dead-ltx-contest', 'fugi-visualizer', 'cat-walkman', 'daft-punk-cover-art', 'trips'];
     for (const shot of manifest.shots) expect(recent, shot.slug).toContain(shot.slug);
   }
 });
