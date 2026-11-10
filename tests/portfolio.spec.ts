@@ -14,7 +14,7 @@ test('work section leads with a featured grid, an archive list, and discipline f
 
   const tiles = page.locator('.work-bento .work-tile');
   const rows = page.locator('.archive__list li');
-  await expect(tiles).toHaveCount(8);
+  await expect(tiles).toHaveCount(9);
   await expect(rows).toHaveCount(8);
   // Newest first, and the lead shape always goes to the first tile.
   await expect(tiles.locator('h3')).toHaveText([
@@ -25,13 +25,17 @@ test('work section leads with a featured grid, an archive list, and discipline f
     'F1R - Fugi Visualizer',
     'Cat Walkman',
     'Daft Punk cover art',
-    'Trips'
+    'Trips',
+    'TAVI Medical Animation'
   ]);
   await expect(tiles.nth(0)).toHaveClass(/work-tile--lead/);
+  // Two tiles left after a full pattern share the last rows as leads.
+  await expect(tiles.nth(7)).toHaveClass(/work-tile--lead/);
+  await expect(tiles.nth(8)).toHaveClass(/work-tile--lead/);
 
   await page.getByRole('button', { name: '--product', exact: true }).click();
   await expect(page.getByRole('button', { name: '--product', exact: true })).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('.work-tile.is-dimmed')).toHaveCount(8);
+  await expect(page.locator('.work-tile.is-dimmed')).toHaveCount(9);
   await expect(page.locator('.archive__list li:not([hidden])')).toHaveCount(2);
 
   await page.getByRole('button', { name: '--all', exact: true }).click();
@@ -445,4 +449,25 @@ test('switching work filters never hides tiles that match', async ({ page }, tes
     expect(hidden, `visible tiles clipped away after ${filter}`).toBe(0);
   }
   await expect(page.locator('.work-tile.is-dimmed')).toHaveCount(0);
+});
+
+test('the TAVI page shows the film, turntables, a layer slider and its making-of clips', async ({ page, request }) => {
+  await page.goto('/projects/tavi-medical-animation/');
+  await expect(page.locator('h1')).toContainText('TAVI Medical Animation');
+
+  const turntable = page.locator('.content-renderer .turntable');
+  await turntable.scrollIntoViewIfNeeded();
+  await expect(turntable.locator('.turntable__assets button')).toHaveCount(6);
+
+  const breakdown = page.locator('.content-renderer .breakdown');
+  await breakdown.scrollIntoViewIfNeeded();
+  await expect(breakdown.locator('.breakdown__stages button')).toHaveCount(3);
+  await expect(page.locator('.content-renderer .content-video')).toHaveCount(3);
+
+  for (const frame of ['heart/00', 'cutaway/17', 'valve/35', 'valve-clay/09']) {
+    const url = `/assets/projects/tavi-medical-animation/turntables/${frame}.webp`;
+    expect((await request.get(url)).ok(), url).toBe(true);
+  }
+  const sources = await page.locator('.content-renderer img').evaluateAll((images) => images.map((image) => image.getAttribute('src') ?? ''));
+  for (const source of sources) expect((await request.get(source)).ok(), source).toBe(true);
 });

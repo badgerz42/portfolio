@@ -442,5 +442,29 @@
   "assets/projects/polar-bear-walk/mesh-wireframe.webp": [
     1920,
     1440
+  ],
+  "assets/projects/tavi-medical-animation/cover.jpg": [
+    1920,
+    1440
+  ],
+  "assets/projects/tavi-medical-animation/still-cutaway-reveal.webp": [
+    1600,
+    1200
+  ],
+  "assets/projects/tavi-medical-animation/still-diseased-valve.webp": [
+    1600,
+    1200
+  ],
+  "assets/projects/tavi-medical-animation/still-new-valve.webp": [
+    1600,
+    1200
+  ],
+  "assets/projects/tavi-medical-animation/still-patient-table.webp": [
+    1600,
+    1200
+  ],
+  "assets/projects/tavi-medical-animation/still-valve-deployed.webp": [
+    1600,
+    1200
   ]
 }
