@@ -10,6 +10,7 @@
 Frames are written as PNGs into <out_dir> (depth: white = near; mattes: white = subject).
 Uses only models already installed in ComfyUI; nothing is downloaded.
 """
+import os
 import json
 import shutil
 import sys
@@ -19,7 +20,8 @@ import uuid
 from pathlib import Path
 
 API = 'http://127.0.0.1:8188'
-COMFY_OUTPUT = Path('/mnt/Programs3/ComfyUIlinux/output')
+# Where the running ComfyUI saves images (its --output-directory); override with COMFY_OUTPUT.
+COMFY_OUTPUT = Path(os.environ.get('COMFY_OUTPUT', '/mnt/Programs4/ComfyUI/output'))
 
 
 def call(path, payload=None):

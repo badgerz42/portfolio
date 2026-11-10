@@ -626,7 +626,12 @@ def shot(slug, source, seconds, enter, outline_colour, doodles, grade=(), split=
 
 NOTLD = 'night-of-the-living-dead-ltx-contest'
 EDIT = [
-    shot('f1r-live-video', clip('f1r_singer', 0.2), 3.0, 'cut', PINK, [
+    # Newest project opens the reel.
+    shot('polar-bear-walk', clip('bear_walk', 0.2), 3.0, 'cut', None, [
+        Doodle('crown', 0.1, -0.1, 0.1, ACID, 4, rot=-8, anchor='follow'), Doodle('motion', 1.08, 0.45, 0.12, WHITE, 8, anchor='follow'),
+        Doodle('sparkle', 0.55, -0.14, 0.07, WHITE, 14, anchor='follow'), Doodle('heart', -0.1, 0.32, 0.07, PINK, 20, rot=-12, anchor='follow'),
+        Doodle('star', 0.9, -0.08, 0.06, ACID, 28, anchor='follow', spin=4)]),
+    shot('f1r-live-video', clip('f1r_singer', 0.2), 2.25, 'burst', PINK, [
         Doodle('notes', 0.95, 0.12, 0.2, WHITE, 3, rot=12), Doodle('heart', 0.08, 0.2, 0.13, PINK, 8, rot=-15),
         Doodle('sparkle', 0.85, 0.55, 0.1, ACID, 13), Doodle('heart', 1.05, 0.45, 0.09, PINK, 18, rot=20),
         Doodle('note', 0.05, 0.62, 0.14, WHITE, 24, rot=-10)], grade=[(1.25, 1.75, 'bw')]),
@@ -727,7 +732,7 @@ def main():
     projects = json.loads((ROOT / 'content/manual-projects.json').read_text())
     overrides = json.loads((ROOT / 'content/project-overrides.json').read_text())
     titles = {p['slug']: {**p, **overrides.get(p['slug'], {})}['title'] for p in projects}
-    tools = {'dark-forest': ['Hunyuan3D', 'Kimodo', 'Blender'], 'f1r-live-video': ['LTX-2.3', 'Pi3X point cloud'],
+    tools = {'polar-bear-walk': ['MiniMax H3', 'Blender', 'LTX-2.5'], 'dark-forest': ['Hunyuan3D', 'Kimodo', 'Blender'], 'f1r-live-video': ['LTX-2.3', 'Pi3X point cloud'],
              NOTLD: ['ComfyUI', 'LTX-2'], 'fugi-visualizer': ['Codex', 'WebGL'],
              'trips': ['Flux', 'Runway'], 'daft-punk-cover-art': ['ComfyUI', 'SDXL'], 'cat-walkman': ['SDXL', 'Suno']}
     shots = render_all()
