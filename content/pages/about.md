@@ -10,8 +10,8 @@ My most recent piece is Polar Bear Walk: a walk cycle captured from an AI video 
 
 ## Experience
 
-- 3D Generalist — VFX studio, Bucharest — 2023 to present
-- 3D Generalist — Medify, Bucharest — 2014 to 2022
+- 3D Generalist — StaticVFX Studio, Bucharest — 2023 to present
+- 3D Generalist — Medify, Bucharest — 2014 to 2022 — animated 3D medical procedures for patient education, each made solo from start to finish (anatomy and instruments, animation, lookdev, lighting, rendering, edit): ERCP, colonoscopy, TAVI, left heart catheterisation, intra-aortic balloon pump, EFTR, PEJ, nephrology, intrathecal neurolysis, entropion repair, vasectomy
 - 3D Artist — Framebreed — 2013 to 2014
 - 3D Artist — INDG — 2008 to 2012 — Philips product renders and the Sensotouch presentation video (rigging, animation, camera, rendering)
 

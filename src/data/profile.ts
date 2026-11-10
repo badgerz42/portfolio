@@ -22,8 +22,8 @@ export const profileFacts = [
   {
     label: 'Experience / contests',
     items: [
-      '3D Generalist — VFX studio, Bucharest — 2023 to present',
-      '3D Generalist — Medify — 2014 to 2022',
+      '3D Generalist — StaticVFX Studio — 2023 to present',
+      '3D Generalist — Medify — animated medical procedures — 2014 to 2022',
       '3D Artist — Framebreed — 2013 to 2014',
       '3D Artist — INDG — 2008 to 2012',
       'LTX-2 generative video contest — 2026',
