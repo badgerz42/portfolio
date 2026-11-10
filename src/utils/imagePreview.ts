@@ -1,3 +1,5 @@
+import imageSizes from '../data/image-sizes.json';
+
 type ImagePresentation = {
   src: string;
   width?: number;
@@ -67,6 +69,10 @@ const previews: Record<string, ImagePresentation> = {
   }
 };
 
+// Pixel sizes of every other local image, written by scripts/build-image-sizes.mjs.
+const sizes = imageSizes as unknown as Record<string, [number, number] | undefined>;
+
 export function imagePresentation(path: string): ImagePresentation {
-  return previews[path] ?? { src: path };
+  const size = sizes[path];
+  return previews[path] ?? (size ? { src: path, width: size[0], height: size[1] } : { src: path });
 }

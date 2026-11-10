@@ -14,6 +14,7 @@
     "new:article": "node scripts/new-article.mjs",
     "new:page": "node scripts/new-page.mjs",
     "build:media": "node scripts/build-media.mjs",
+    "build:image-sizes": "node scripts/build-image-sizes.mjs",
     "build:collage": "python3 scripts/build-collage-reel.py",
     "build:doodle": "python3 scripts/build-doodle-reel.py"
   },

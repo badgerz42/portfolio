@@ -363,6 +363,31 @@ test('the homepage process slider keeps the frame shape of the project it shows'
   expect(box!.width / box!.height).toBeCloseTo(1.6954, 1);
 });
 
+test('pages carry readable text, structured data and a share image without JavaScript', async ({ request }) => {
+  const home = await (await request.get('/')).text();
+  expect(home).toContain('class="prerender"');
+  expect(home).toContain('<h1>Vlad Maftei</h1>');
+  expect(home).toContain('href="/projects/polar-bear-walk/"');
+  expect(home).toContain('"@type":"ProfilePage"');
+  expect(home).toContain('og:image" content="https://vladmaftei.com/assets/share/vladmaftei-share.jpg"');
+
+  const project = await (await request.get('/projects/polar-bear-walk/')).text();
+  expect(project).toContain('<h2>From Video To Bones</h2>');
+  expect(project).toContain('"@type":"CreativeWork"');
+
+  expect((await request.get('/assets/share/vladmaftei-share.jpg')).ok()).toBe(true);
+  expect((await request.get('/favicon.ico')).ok()).toBe(true);
+});
+
+test('the static copy is replaced by the app and inline images reserve their space', async ({ page }) => {
+  await page.goto('/projects/polar-bear-walk/');
+  await expect(page.locator('h1')).toContainText('Polar Bear Walk');
+  await expect(page.locator('.prerender')).toHaveCount(0);
+  const image = page.locator('.content-renderer .content-image img').first();
+  await expect(image).toHaveAttribute('width', /\d+/);
+  await expect(image).toHaveAttribute('height', /\d+/);
+});
+
 test('the polar bear page shows its final shot, inline media and the CG-to-footage slider', async ({ page, request }) => {
   await page.goto('/projects/polar-bear-walk/');
   await expect(page.locator('h1')).toContainText('Polar Bear Walk');
