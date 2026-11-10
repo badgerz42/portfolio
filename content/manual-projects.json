@@ -63,7 +63,7 @@
       "My only interface was a conversation with Claude Code, running Anthropic's Opus 5.5. Claude wrote and ran every script in Blender, Houdini and ComfyUI on my workstation. My part was the one I know from years of VFX work: looking at every take and saying what was wrong with it.",
       "",
       "## The Idea",
-      "The starting point was a [video by Graalito](https://x.com/Graalitoo/status/2106536651883421934) showing game animals animated from Seedance clips: render your own model from the side, let a video model make it walk, then copy the video back onto the skeleton. I had no Seedance subscription, so the brief became: redo it with MiniMax H3 running locally in ComfyUI, on a Tripo polar bear, and push it far past game quality.",
+      "The idea is simple to say: render your own model from the side, let a video model make it walk, then copy that video back onto the skeleton. I wanted to do it with MiniMax H3 running locally in ComfyUI, on a Tripo polar bear, and push it far past game quality.",
       "",
       "## A Mesh That Can Walk",
       "The Tripo model looked good and was useless for rigging. The head was turned off-axis, left and right did not match, and the hind paws floated 3.5 cm above the ground. Claude straightened the neck along its measured midline, made the body symmetric, rebuilt the surface in Houdini as 16,000 clean quads, made new UVs and transferred the original texture across.",
