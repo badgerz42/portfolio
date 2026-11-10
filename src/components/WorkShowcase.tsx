@@ -16,8 +16,14 @@ const filters: Array<{ kind: ProjectKind | 'all'; label: string }> = [
 const slugOf = (project: PortfolioProject) => project.slug ?? '';
 
 // Tile shapes follow position (not project) so the grid stays balanced whatever the order.
+// Each pattern fills whole rows of the four-column grid, so no tile is left alone on a last row.
 const tilePattern = ['lead', 'tall', 'std', 'std', 'wide', 'std', 'std'] as const;
-const tileAt = (index: number) => tilePattern[index % tilePattern.length];
+const tilePatternOfEight = ['lead', 'tall', 'std', 'std', 'std', 'std', 'lead', 'wide'] as const;
+const tileAt = (index: number, count: number) => {
+  const pattern = count % tilePattern.length === 1 && index >= count - tilePatternOfEight.length ? tilePatternOfEight : tilePattern;
+  const offset = pattern === tilePatternOfEight ? count - tilePatternOfEight.length : 0;
+  return pattern[(index - offset) % pattern.length];
+};
 const matches = (project: PortfolioProject, filter: ProjectKind | 'all') => filter === 'all' || Boolean(project.kind?.includes(filter));
 const kindLabel = (project: PortfolioProject) => (project.kind ?? []).filter((kind) => kind !== 'code').join(' / ').toUpperCase();
 
@@ -68,10 +74,10 @@ function HoverLoop({ slug, active }: { slug: string; active: boolean }) {
   );
 }
 
-function WorkTile({ project, index, dimmed }: { project: PortfolioProject; index: number; dimmed: boolean }) {
+function WorkTile({ project, index, count, dimmed }: { project: PortfolioProject; index: number; count: number; dimmed: boolean }) {
   const [active, setActive] = useState(false);
   const slug = slugOf(project);
-  const tile = tileAt(index);
+  const tile = tileAt(index, count);
   const lead = tile === 'lead';
 
   return (
@@ -206,7 +212,7 @@ export function WorkShowcase({ featured, archive }: { featured: PortfolioProject
 
       <div className="work-bento">
         {featured.map((project, index) => (
-          <WorkTile project={project} index={index} dimmed={!matches(project, filter)} key={slugOf(project)} />
+          <WorkTile project={project} index={index} count={featured.length} dimmed={!matches(project, filter)} key={slugOf(project)} />
         ))}
       </div>
 

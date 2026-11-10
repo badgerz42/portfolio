@@ -66,12 +66,18 @@ function ContentVideo({ title, url }: { title: string; url: string }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const isLocal = isLocalVideoUrl(url);
   const poster = isLocal ? localVideoPoster(url) : undefined;
+  // Wide comparison strips take their own shape instead of sitting letterboxed in the default frame.
+  const [wideRatio, setWideRatio] = useState<number>();
+  const fitWide = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const { naturalWidth, naturalHeight } = event.currentTarget;
+    if (naturalHeight && naturalWidth / naturalHeight > 2) setWideRatio(naturalWidth / naturalHeight);
+  };
 
   return (
     <figure className="content-video">
       {isLocal && !isLoaded ? (
-        <button className="project-video__poster content-video__poster" type="button" onClick={() => setIsLoaded(true)} aria-label={`Play ${title}`}>
-          <img src={assetPath(poster!)} alt="" loading="lazy" />
+        <button className="project-video__poster content-video__poster" type="button" onClick={() => setIsLoaded(true)} aria-label={`Play ${title}`} style={wideRatio ? { aspectRatio: String(wideRatio) } : undefined}>
+          <img src={assetPath(poster!)} alt="" loading="lazy" onLoad={fitWide} />
           <span>PLAY WIP</span>
         </button>
       ) : isLocal ? (
