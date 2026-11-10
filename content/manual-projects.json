@@ -801,7 +801,7 @@
     "body": [
       "## The Brief",
       "TAVI, transcatheter aortic valve implantation, replaces a failing aortic valve without opening the chest. A new valve is crimped onto a balloon, threaded up from the groin through the femoral artery and the aorta, and expanded inside the old valve. This film explains that procedure to the patient who is about to have it, in 80 seconds.",
-      "I made it at Medify in 2022 and did all of it myself: the patient, the theatre, the heart, the device, the animation, the look, the render layers and the final comp. It is one of a long series of animated procedures I built there, and the heart from this film went on to carry more than fifteen other cardiac procedures.",
+      "I made it at and for Medify in 2022, from start to finish: the patient, the theatre, the heart, the device, the animation, the look, the render layers and the final comp. It is one of a long series of animated procedures I built there, and the heart from this film went on to carry more than fifteen other cardiac procedures.",
       "![The diseased aortic valve from above, early in the film](assets/projects/tavi-medical-animation/still-diseased-valve.webp)",
       "## One Scene, One Camera",
       "The whole film is a single Blender scene with a single animated camera: 2,000 frames at 25 fps, rendered in Eevee at 1920 by 1440. There are no cuts between files. The camera starts on the standing patient, dives through the chest to the valve, pulls back out to the operating table, follows the catheter up the aorta and ends inside the cutaway heart. Every dissolve in the film is a blend between render layers of the same frame.",
